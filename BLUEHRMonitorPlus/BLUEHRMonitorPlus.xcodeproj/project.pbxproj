@@ -11,7 +11,7 @@
 		00D5FF6B2CA5733F004E38F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5FF6A2CA5733F004E38F4 /* SceneDelegate.swift */; };
 		00D5FF722CA57340004E38F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D5FF712CA57340004E38F4 /* Assets.xcassets */; };
 		00D5FF752CA57340004E38F4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 00D5FF742CA57340004E38F4 /* Base */; };
-		00D5FF7D2CA57663004E38F4 /* MainBLEViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5FF7C2CA57663004E38F4 /* MainBLEViewController copy.swift */; };
+		00D5FF7D2CA57663004E38F4 /* MainBLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5FF7C2CA57663004E38F4 /* MainBLEViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		00D5FF712CA57340004E38F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00D5FF742CA57340004E38F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00D5FF762CA57340004E38F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00D5FF7C2CA57663004E38F4 /* MainBLEViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainBLEViewController copy.swift"; sourceTree = "<group>"; };
+		00D5FF7C2CA57663004E38F4 /* MainBLEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBLEViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			children = (
 				00D5FF682CA5733F004E38F4 /* AppDelegate.swift */,
 				00D5FF6A2CA5733F004E38F4 /* SceneDelegate.swift */,
-				00D5FF7C2CA57663004E38F4 /* MainBLEViewController copy.swift */,
+				00D5FF7C2CA57663004E38F4 /* MainBLEViewController.swift */,
 				00D5FF712CA57340004E38F4 /* Assets.xcassets */,
 				00D5FF732CA57340004E38F4 /* LaunchScreen.storyboard */,
 				00D5FF762CA57340004E38F4 /* Info.plist */,
@@ -136,7 +136,7 @@
 			files = (
 				00D5FF692CA5733F004E38F4 /* AppDelegate.swift in Sources */,
 				00D5FF6B2CA5733F004E38F4 /* SceneDelegate.swift in Sources */,
-				00D5FF7D2CA57663004E38F4 /* MainBLEViewController copy.swift in Sources */,
+				00D5FF7D2CA57663004E38F4 /* MainBLEViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

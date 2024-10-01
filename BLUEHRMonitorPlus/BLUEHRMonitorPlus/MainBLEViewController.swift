@@ -10,9 +10,9 @@ import CoreBluetooth
 
 class MainBLEViewController: UIViewController {
 
-    
+    let heartRateServiceCBUUID = CBUUID(string: "180D")
+
     //lazy vars UI to be used
-    
     lazy var topHeaderView:UIView = {
         var topView = UIView()
         topView.translatesAutoresizingMaskIntoConstraints = false
@@ -25,9 +25,6 @@ class MainBLEViewController: UIViewController {
         var title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "Heart Rate Monitor"
-//        title.numberOfLines = 0
-//        title.lineBreakMode = .byTruncatingTail
-//        title.adjustsFontSizeToFitWidth = true
         title.font = UIFont.boldSystemFont(ofSize: 25)
         title.textColor = .white
         title.textAlignment = .center
@@ -47,7 +44,6 @@ class MainBLEViewController: UIViewController {
     lazy var spaceView:UIView = {
         let space = UIView(frame: .zero)
         space.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        
         return space
     }()
     
@@ -57,6 +53,7 @@ class MainBLEViewController: UIViewController {
         title.text = "Current Heart Rate"
         title.font = UIFont.boldSystemFont(ofSize: 35)
         title.textAlignment = .center
+        title.textColor = .black
         
         return title
     }()
@@ -67,6 +64,7 @@ class MainBLEViewController: UIViewController {
         title.text = "00"
         title.font = UIFont.systemFont(ofSize: 130)
         title.textAlignment = .center
+        title.textColor = .black
         
         return title
     }()
@@ -77,6 +75,7 @@ class MainBLEViewController: UIViewController {
         title.text = "Body Sensor Location"
         title.font = UIFont.boldSystemFont(ofSize: 35)
         title.textAlignment = .center
+        title.textColor = .black
         
         return title
     }()
@@ -87,17 +86,19 @@ class MainBLEViewController: UIViewController {
         title.text = "----"
         title.font = UIFont.boldSystemFont(ofSize: 40)
         title.textAlignment = .center
+        title.textColor = .black
         
         return title
     }()
     
     var centralManager: CBCentralManager!
+    var heartRatePeripheral: CBPeripheral!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //centralManager = CBCentralManager(delegate: self, queue: nil)
         setView()
-        centralManager = CBCentralManager(delegate: self, queue: nil)
 
     }
 
@@ -133,30 +134,39 @@ class MainBLEViewController: UIViewController {
         stack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
     }
-    
 
 }
 
-extension MainBLEViewController: CBCentralManagerDelegate {
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        switch central.state {
-            case .unknown:
-              print("central.state is .unknown")
-            case .resetting:
-              print("central.state is .resetting")
-            case .unsupported:
-              print("central.state is .unsupported")
-            case .unauthorized:
-              print("central.state is .unauthorized")
-            case .poweredOff:
-              print("central.state is .poweredOff")
-            case .poweredOn:
-              print("central.state is .poweredOn")
-              centralManager.scanForPeripherals(withServices: nil)
-            @unknown default:
-              print("Default case, should never get here")
-        }
-    }
-    
-    
-}
+//extension MainBLEViewController: CBCentralManagerDelegate {
+//    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+//        switch central.state {
+//            case .unknown:
+//              print("central.state is .unknown")
+//            case .resetting:
+//              print("central.state is .resetting")
+//            case .unsupported:
+//              print("central.state is .unsupported")
+//            case .unauthorized:
+//              print("central.state is .unauthorized")
+//            case .poweredOff:
+//              print("central.state is .poweredOff")
+//            case .poweredOn:
+//              print("central.state is .poweredOn")
+//              centralManager.scanForPeripherals(withServices: nil)
+//            @unknown default:
+//              print("Default case, should never get here")
+//        }
+//    }
+//    
+//    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+//        print(peripheral)
+////        heartRatePeripheral = peripheral
+////        centralManager.stopScan()
+////        centralManager.connect(heartRatePeripheral)
+//    }
+//    
+//    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+//        print("Connected!")
+//        heartRatePeripheral.discoverServices(nil)
+//    }
+//}
